@@ -1,4 +1,4 @@
- 	parking.controller("parkingCtrl", function($scope, parkingService2){
+ 	parking.controller("parkingCtrl", function($scope, parkingService2, $http, $q){
 
 			$scope.appTitle = "[Packt] Parking";
 
@@ -31,7 +31,7 @@
 
             var retreiveParties = function(){
 
-                 $http.get('../web/app_dev.php/api/exercices/')
+                 $http.get('http://localhost/brainss/web/app_dev.php/api/exercices')
                     .success(function(data, status, headers, config){
                         $scope.exos = data;
                     })
