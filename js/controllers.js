@@ -27,13 +27,13 @@
 
 
 
-             $scope.parties = [];
+             $scope.exos = [];
 
             var retreiveParties = function(){
 
-                 $http.get('../web/app_dev.php/api/exercices/3/parties')
+                 $http.get('../web/app_dev.php/api/exercices/')
                     .success(function(data, status, headers, config){
-                        $scope.parties = data;
+                        $scope.exos = data;
                     })
                     .error(function(data, status, headers, config){
                         switch(status){
