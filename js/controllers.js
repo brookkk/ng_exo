@@ -57,4 +57,41 @@
 
 
 
+ 
+
+
+
     	});	
+
+
+parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade){
+
+
+    $scope.exo= [];
+
+    var retreiveExercice = function(){
+
+     parkingHttpFacade.getExercice()
+         .success(function(data, status, headers, config){
+         $scope.exo = data;
+         $scope.loading=false;
+
+         })
+         .error(function(data, status, headers, config){
+         switch(status){
+            case 401 : {
+                $scope.message = "You must be Authenticated!";
+                break;
+                }
+            case 500 : {
+                $scope.message = "Something went wrong!";
+                break;
+                }
+          }
+        });
+        };
+
+
+    retreiveExercice();
+
+    });
