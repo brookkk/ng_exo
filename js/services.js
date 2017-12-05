@@ -43,3 +43,23 @@ parking.service("parkingService2", function(parkingConfig){
 		};
 	};
 });
+
+
+
+
+parking.factory("parkingHttpFacade", function($http){
+
+	var _getExercices = function(){
+		return $http.get("http://localhost/brainss/web/app_dev.php/api/exercices");
+	};
+
+	var _getExercice= function(id){
+		return $http.get("http://localhost/brainss/web/app_dev.php/api/exercices/"+id);
+	};
+
+	return {
+		getExercices: _getExercices,
+		getExercice: _getExercice
+	};
+
+});
