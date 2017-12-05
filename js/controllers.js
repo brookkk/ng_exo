@@ -1,7 +1,5 @@
  	parking.controller("parkingCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade){
 
-
-
     		$scope.cars = [];
 
     		$scope.colors=["white", "black", "blue", "red", "silver"];
@@ -18,12 +16,7 @@
                 $scope.ticket = parkingService2.calculateTicket(car);
             };
 
-
-
-
-
-   
-            $scope.loading=true;
+          $scope.loading=true;
 
 
              $scope.exos = [];
@@ -64,16 +57,20 @@
     	});	
 
 
-parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade){
+parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade, $routeParams){
 
-
+    $scope.loading=true;
     $scope.exo= [];
 
-    var retreiveExercice = function(){
+    $scope.appTitle="Exercice";
 
-     parkingHttpFacade.getExercice()
+
+    var retreiveExercice = function(id){
+
+     parkingHttpFacade.getExercice(id)
          .success(function(data, status, headers, config){
          $scope.exo = data;
+         console.log(" exerciice : " + $scope.exo);
          $scope.loading=false;
 
          })
@@ -92,6 +89,6 @@ parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, 
         };
 
 
-    retreiveExercice();
+    retreiveExercice($routeParams.id);
 
     });
