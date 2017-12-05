@@ -57,6 +57,8 @@ parking.factory("parkingHttpFacade", function($http){
 		return $http.get("http://localhost/brainss/web/app_dev.php/api/exercices/"+id);
 	};
 
+	
+
 	return {
 		getExercices: _getExercices,
 		getExercice: _getExercice
