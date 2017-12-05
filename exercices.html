@@ -2,7 +2,15 @@
 
     <h3 ng-bind="appTitle"></h3>
  
-<div ng-show="exos.length>0">
+
+<div ng-show="loading">
+
+
+	<img src="images/loader.gif">
+	
+	
+</div>
+<div ng-show="exos.length>0" ng-hide="loading">
 
 <div>Top Solved</div>
 <hr>

@@ -1,13 +1,12 @@
  	parking.controller("parkingCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade){
 
-			$scope.appTitle = "[Packt] Parking";
 
 
     		$scope.cars = [];
 
     		$scope.colors=["white", "black", "blue", "red", "silver"];
 
-    		$scope.appTitle="the app title";
+    		$scope.appTitle="Exercices";
 
     		$scope.park = function(car){
     			car.entrance = new Date();
@@ -24,17 +23,19 @@
 
 
    
-
+            $scope.loading=true;
 
 
              $scope.exos = [];
 
-            var retreiveParties = function(){
+            var retreiveExercices = function(){
 
                  //$http.get('http://localhost/brainss/web/app_dev.php/api/exercices')
                  parkingHttpFacade.getExercices()
                     .success(function(data, status, headers, config){
                         $scope.exos = data;
+                        $scope.loading=false;
+
                     })
                     .error(function(data, status, headers, config){
                         switch(status){
@@ -52,7 +53,7 @@
             };
 
 
-            retreiveParties();
+            retreiveExercices();
 
 
 
