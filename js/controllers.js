@@ -57,7 +57,6 @@
     	});	
 
 
-<<<<<<< HEAD
 parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade, $routeParams){
 
     $scope.loading=true;
@@ -72,18 +71,6 @@ parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, 
          .success(function(data, status, headers, config){
          $scope.parties = data;
          console.log(" exerciice : ");console.log( $scope.parties);
-=======
-parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade){
-
-
-    $scope.exo= [];
-
-    var retreiveExercice = function(){
-
-     parkingHttpFacade.getExercice()
-         .success(function(data, status, headers, config){
-         $scope.exo = data;
->>>>>>> parent of 9f353cf... Revert "exo"
          $scope.loading=false;
 
          })
@@ -102,10 +89,6 @@ parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, 
         };
 
 
-<<<<<<< HEAD
     retreiveExercice($routeParams.id);
-=======
-    retreiveExercice();
->>>>>>> parent of 9f353cf... Revert "exo"
 
     });
