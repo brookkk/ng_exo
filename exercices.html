@@ -5,7 +5,7 @@
 
 <div ng-show="loading">
 
-
+	Chargement en cours<br>
 	<img src="images/loader.gif">
 	
 	
@@ -20,9 +20,8 @@
 <hr>
 
 <div ng-repeat="exo in exos | orderBy: 'date_creation' : reverse=true">
-    {{exo.nom}} &nbsp
+    <a href="#/exercice/{{exo.id}}">{{exo.nom}}</a> &nbsp
     {{exo.date_creation  | date: 'dd/MM/yyyy'}} &agrave {{exo.date_creation|date: 'HH:mm:ss'}}<br>
-
 
   </div>  
 
