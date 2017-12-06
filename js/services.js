@@ -54,10 +54,10 @@ parking.factory("parkingHttpFacade", function($http){
 	};
 
 	var _getExercice= function(id){
-		return $http.get("http://localhost/brainss/web/app_dev.php/api/exercices/"+id+"/parties");
+		return $http.get("http://localhost/brainss/web/app_dev.php/api/exercices/"+id);
 	};
 
-
+	
 
 	return {
 		getExercices: _getExercices,

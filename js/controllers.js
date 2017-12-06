@@ -60,7 +60,7 @@
 parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, parkingHttpFacade, $routeParams){
 
     $scope.loading=true;
-    $scope.parties= [];
+    $scope.exo= [];
 
     $scope.appTitle="Exercice";
 
@@ -69,8 +69,8 @@ parking.controller("exerciceCtrl", function($scope, parkingService2, $http, $q, 
 
      parkingHttpFacade.getExercice(id)
          .success(function(data, status, headers, config){
-         $scope.parties = data;
-         console.log(" exerciice : ");console.log( $scope.parties);
+         $scope.exo = data;
+         console.log(" exerciice : " + $scope.exo);
          $scope.loading=false;
 
          })

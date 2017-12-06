@@ -10,71 +10,6 @@
 	
 	
 </div>
-
-
-
-
-
-
-
-
-
-  <div ng-show="parties.length > 0" ng-hide="loading">
-
-      
-       <form name="exoForm">
-        
-          <div ng-repeat="partie in parties ">
-          
-            <p>{{partie.titre}}<br>
-            {{partie.contenu}}</p>
-
-            <div ng-repeat="quest in partie.exo_questions ">
-              <p>{{quest.question}}</p>
-                <!--   Réponses   -->
-                <input type="checkbox" ng-model="quest.rep_1" value="quest.choix_1" checked="checked"/>{{quest.choix_1}}     &nbsp &nbsp &nbsp
-                <input type="checkbox" ng-model="quest.rep_2" value="quest.choix_2">{{quest.choix_2}}     &nbsp &nbsp &nbsp
-                <input type="checkbox" ng-model="quest.rep_3" value="quest.choix_3">{{quest.choix_3}}     &nbsp &nbsp &nbsp
-                <input type="checkbox" ng-model="quest.rep_4" value="quest.choix_4">{{quest.choix_4}}     &nbsp &nbsp &nbsp
-
-               
-
-            </div>
-
-            
-
-           </div>
-           <br><br>
-            <button
-           ng-click = "evaluateForm()">
-            Valider             
-           </button>
-<br>
-<div ng-if="max>0 && evaluation < max">
-           votre score :  {{evaluation}} / {{max}}
-</div>
-
-<div ng-if="max>0 && evaluation == max">
-           votre score :  {{evaluation}} / {{max}} <br>
-           well done 
-
-</div>
-         </form>
-       
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
 <div ng-show="exo.length>0" ng-hide="loading">
 
 <div>Top Solved</div>
@@ -130,5 +65,3 @@
  
 
  </div>
-
--->
