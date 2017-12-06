@@ -5,10 +5,6 @@ parking.config(function($routeProvider){
 		templateUrl: "exercices.html",
 		controller: "parkingCtrl"
 	}).
-	when("/exercice/:id", {
-		templateUrl: "exercice.html",
-		controller: "exerciceCtrl"
-	}).
 	otherwise({
 		redirectTo : 'exercices'
 	});
